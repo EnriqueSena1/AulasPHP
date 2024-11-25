@@ -12,16 +12,21 @@ class LoginController{
     }
     public function ValidaTudo($nome,$senha){
         try {
-            $sql = "SELECT * FROM Usuarios where nome = :nome AND senha = :senha";
+            $sql = "SELECT * FROM usuario where nome = :nome AND senha = :senha";
             $db = $this->conn->prepare($sql);
             $db->bindParam(":nome",$nome);
             $db->bindParam(":senha",$senha);
             $db->execute();
             $usuario = $db->fetchAll(PDO::FETCH_ASSOC);
-            var_dump($usuario);
+            
+            if($usuario){
+                return true;
+            }else{
+                return false;
+            }
 
-        } catch (\Throwable $th) {
-            //throw $th;
+        } catch (\Exception $e) {
+            echo "Database inferno:".$e->getMessage();
         }
     }
 }

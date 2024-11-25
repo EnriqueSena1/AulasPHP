@@ -16,6 +16,11 @@
 </body>
 </html>
 <?php
+
+require_once __DIR__."/backend/controller/loginController.php";
+
+$loginController = new LoginController();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nome = $_POST['nome'];
     $senha = $_POST['senha'];
@@ -23,6 +28,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(empty($nome) || empty($senha)){
         echo "Todos os campos são obrigatorios";
     }else{
+        if($loginController-> ValidaTudo($nome,$senha)){
+            header("location: ./pages/home/index.php");
+            
+        }else{
+            echo"usuario invalido";
+        }
+        
 
     }
 }
