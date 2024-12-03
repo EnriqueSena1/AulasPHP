@@ -16,7 +16,7 @@ class LoginController{
             $db = $this->conn->prepare($sql);
             $db->bindParam(":nome",$nome);
             $db->bindParam(":senha",$senha);
-            if($db->execute){
+            if($db->execute()){
                 return true;
             }else{
                 return false;

@@ -31,8 +31,6 @@ class LoginController{
     }
 }
 
-$teste = new LoginController();
 
-$teste->ValidaTudo("Enrique", "1234");
 
 // http://localhost/tantofaz/AulasPHP/tantofaz/backend/controller/loginController.php

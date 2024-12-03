@@ -20,7 +20,6 @@ class Database
         }
     }
 }
-$teste = new Database();
-$teste-> connect();
+
 
 // http://localhost/tantofaz/AulasPHP/tantofaz/db/database.php
