@@ -12,7 +12,7 @@ class LoginController{
     }
     public function ValidaTudo($nome,$senha){
         try {
-            $sql = "SELECT * FROM usuario where nome = :nome AND senha = :senha";
+            $sql = "SELECT * FROM usuarios where nome = :nome AND senha = :senha";
             $db = $this->conn->prepare($sql);
             $db->bindParam(":nome",$nome);
             $db->bindParam(":senha",$senha);
@@ -20,7 +20,11 @@ class LoginController{
             $usuario = $db->fetchAll(PDO::FETCH_ASSOC);
             
             if($usuario){
-                return true;
+                session_start();
+                // Armazena o ID do usuário na sessão para uso posterior
+                $_SESSION["id_usuario"] = $usuario[0]["id"];
+                
+                return true;                
             }else{
                 return false;
             }

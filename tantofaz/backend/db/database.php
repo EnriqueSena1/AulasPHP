@@ -2,7 +2,7 @@
 class Database
 {
     private $server = "localhost";
-    private $dbnome = "Aularafael"; //
+    private $dbnome = "localAulasPHP"; //
     private $user = "root";
     private $pass = "";
 

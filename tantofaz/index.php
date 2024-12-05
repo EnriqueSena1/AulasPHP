@@ -6,11 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="./backend/router/loginRouter.php?acao=validarlogin" method="POST">
+    
+    <form action="./backend/router/loginRouter.php?acao=validarLogin" method="POST">
         <input type="text" name="nome">
         <input type="password" name="senha">
         <button type="submit">Logar</button>
-
     </form>
 </body>
 </html>
